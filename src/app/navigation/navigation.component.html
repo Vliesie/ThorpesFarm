@@ -1,0 +1,26 @@
+
+    <nav *ngIf='membername' class="navbar navbar-expand-md" id="navbar">
+      <div class="container">
+       
+        <a class="navbar-brand override " routerLink="/dashboard">
+            <a  skipLocationChange routerLink="/dashboard"class="nav-link override" id="Home"><img style="max-width: 220px;" src="https://azipit.co.za/booking/images/thorpes.png" alt="image"></a>
+        </a>
+        <h5 class="nav-surname h-m" style="color:black;font-weight:300!important;">Welcome {{membername}}</h5>
+        <ul id="navbar-list" class="navbar-nav override">
+           
+           
+            <li class="nav-item override" (click)="onNavLinkClicked($event)">
+                <a  skipLocationChange routerLink="/profile" class="nav-link override" id="Home">My Bookings</a>
+            </li>
+            <li class="nav-item override" (click)="onNavLinkClicked($event)">
+                <a  skipLocationChange (click)="logout()" class="nav-link override" id="Home">Log Out</a>
+            </li>
+         
+        </ul>
+        <span class="drawer-inset-shadow"></span>
+
+  
+      </div>
+    </nav>
+
+

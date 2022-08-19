@@ -1,0 +1,31 @@
+
+ 
+
+ 
+ <div class="background login" style="position: absolute;top:0;bottom:0;width: 100%;">
+  <div style="margin-top:10px" class="container"><h1 style="text-align: center;color:black;">Rotation Booking</h1></div>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 routerLink="/login"> Sign In </h2>
+    <h2 class="inactive underlineHover" class="active" >Sign Up </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login"  #surName placeholder="Surname">
+      <input type="password" id="password" class="fadeIn third" name="login" #userPassword placeholder="Password">
+      <input type="password" id="password" class="fadeIn third" name="login" #color placeholder="Colour">
+      <input type="submit" class="fadeIn fourth" (click)="create(surName.value, userPassword.value, color.value)" value="Register">
+    </form>
+
+    <!-- Remind Passowrd -->
+ 
+
+  </div>
+</div> 
+</div>

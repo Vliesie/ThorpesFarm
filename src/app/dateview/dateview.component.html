@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <p>Surname:</p>
+    </div>
+    <div class="col">
+        <p>Start Date:</p>
+    </div>
+    <div class="col">
+        <p>End Date</p>
+    </div>
+    <div class="col">
+        <p>Info:</p>
+    </div>
+    <div class="col">
+        <p>Status:</p>
+    </div>
+  </div>
+</div>   
+
+<div *ngFor="let x of entries; let i = index" class="container">
+  
+    <div class="block row" [style.backgroundColor]="x.color">
+        <div class="col">
+            <p>{{x.surname}}</p>
+        </div>
+        <div class="col">
+            <p>{{x.startDate.day}}/{{x.startDate.month}}/{{x.startDate.year}}</p>
+        </div>
+        
+         <div class="col">
+            <p>{{x.endDate.day}}/{{x.endDate.month}}/{{x.endDate.year}}</p>
+         </div>
+       
+        <div class="col">
+            <p>{{x.info}}</p>
+           
+           
+        </div>
+        <div class="col">
+            <p>{{x.status}}</p>
+        </div>
+     
+     
+    </div> 
+</div>
+
+
+
+
+ 

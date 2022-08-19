@@ -1,0 +1,73 @@
+<app-navigation></app-navigation>
+<br>
+<br>
+
+
+<div class=" profile h-m">
+    <p>Edit your booking descriptions by replacing info or cancel a booking by clicking on the status dropdown and selecting cancel, Then selecting save on the apprioprete booking</p>
+    <div class="row">
+      <div class="col-2">
+          <p>Surname:</p>
+      </div>
+      <div class="col-2">
+          <p>Start Date:</p>
+      </div>
+      <div class="col-2">
+          <p>End Date</p>
+      </div>
+      <div class="col-2">
+          <p>Info:</p>
+      </div>
+      <div class="col-2">
+          <p>Status:</p>
+      </div>
+      <div class="col-2">
+        <p>Settings:</p>
+    </div>
+    </div>
+  </div>   
+ 
+  <div *ngFor="let x of entries" >
+    <div *ngIf="x.status === 'Attending'">
+        
+ 
+      <div class="row">
+          <div class="col-md-2 col-4" style="text-align: center;">
+              <p>{{x.surname}}</p>
+          </div>
+          <div class="col-md-2 col-4" style="text-align: center;">
+              <p>{{x.startDate.day}}/{{x.startDate.month}}/{{x.startDate.year}}</p>
+          </div>
+          
+           <div class="col-md-2 col-4" style="text-align: center;">
+              <p>{{x.endDate.day}}/{{x.endDate.month}}/{{x.endDate.year}}</p>
+           </div>
+         
+          <div class="col-md-2 col-3" style="text-align: center;">
+              <input #info  type="text" name="invoicenumber" 
+  placeholder="{{x.info}}" class="form-control info-field">
+             
+          </div>
+          <div class="col-md-2 col-6" style="text-align: center;">
+           
+            <mat-form-field appearance="fill" >
+                <mat-label>Select Booking Status</mat-label>
+                <mat-select  #selecter [(value)]="selected"  >
+                  <mat-option value="{{attending]}">Attending</mat-option>
+                  <mat-option value="{{cancel}}">Cancel</mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+          <div class="col-md-2 col-3" style="text-align: center;">
+          
+              <button type="button" (click)="update(x.id ,x.surname, x.startDate.day ,x.startDate.month,x.startDate.year,x.endDate.day,x.endDate.month,x.endDate.year, info.value, selecter.value)" class="btn btn-primary">Save</button>
+          </div>
+       
+      </div> 
+    </div>
+  </div>
+  
+
+  
+  
+   
